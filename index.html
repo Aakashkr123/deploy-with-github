@@ -6,37 +6,1073 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="custom.css">
 
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <title>Pranna Interio</title>
 </head>
 
 <body>
 
+    <!-- part1  : Navbar with moving crousel -->
+    <!-- Main container for the header, now with a controlled height -->
+    <div class="header-container position-relative">
 
+        <!-- 1. The Carousel (Bottom Layer) - now with .carousel-fade -->
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-    <div class="container">
-        <div class="header row">
-            <div class="h1 ">Index page</div>
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Carousel Slides -->
+            <div class="carousel-inner ">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="assets/banner/picture3.jpeg" class="d-block w-100" alt="Modern living room">
+                    <!-- Caption for Slide 1 -->
+                    <div class="carousel-caption">
+                        <h1 class="display-3 fw-bold  stylish-header-mobile">Design Your Dream Space</h1>
+                        <p class="lead my-3">We create beautiful and functional interiors tailored to you.</p>
+                        <a href="#" class="btn btn-light btn-lg">Learn More</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="assets/banner/pic1.jpeg" class="d-block w-100" alt="Minimalist bedroom">
+                    <!-- Caption for Slide 2 -->
+                    <div class="carousel-caption">
+                        <h1 class="display-3 fw-bold stylish-header-mobile">Elegance in Simplicity</h1>
+                        <p class="lead my-3">Discover the beauty of minimalist and modern design.</p>
+                        <a href="#" class="btn btn-light btn-lg">Our Portfolio</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="assets/banner/picture2.jpeg" class="d-block w-100" alt="Cozy armchair">
+                    <!-- Caption for Slide 3 -->
+                    <div class="carousel-caption">
+                        <h1 class="display-3 fw-bold stylish-header-mobile">Comfort Meets Style</h1>
+                        <p class="lead my-3">Crafting cozy and inviting spaces you'll love to live in.</p>
+                        <a href="#" class="btn btn-light btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="row image-container">
-            <img src="cx_alfa.jpeg" alt="julieJones" class=" rounded img-thumbnail" width="500" height="500">
-        </div>
 
+        <!-- 2. The Navigation Bar (Top Layer) - No changes needed here -->
+        <nav class="navbar navbar-expand-lg navbar-dark position-absolute top-0 start-0 w-100">
+            <div class="container-fluid">
+                <a class="navbar-brand mb-0" href="#">
+                    <div style="width: 200px; color: white;" class="mb-3">
+
+                        <svg width="280" height="140" viewBox="0 0 300 150" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g fill="currentColor">
+                                <!-- The Frame -->
+                                <path d="M50 30 H 250 V 120 H 50 V 30 Z M 52 32 V 118 H 248 V 32 H 52 Z" />
+
+                                <!-- Wordmark "Pranna" in a bold script style -->
+                                <text x="150" y="80" font-family="'Brush Script MT', 'Brush Script Std', 'cursive'"
+                                    font-size="50" font-weight="700" text-anchor="middle"
+                                    dominant-baseline="middle">Pranna</text>
+
+                                <!-- Supporting text "INTERIOR" -->
+                                <text x="150" y="110" font-family="'Montserrat', 'sans-serif'" font-size="12"
+                                    font-weight="500" text-anchor="middle" letter-spacing="0.2em">INTERIO</text>
+                            </g>
+                        </svg>
+
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end of part1 -->
+
+
+
+    <!-- part2 : dynamic marqee : album section -->
+    <!-- Dynamic Scrolling Review Section (Redefined) -->
+    <div class="dynamic-review-section">
+        <div class="container-fluid px-0">
+
+            <!-- Row 1: Moves Right-to-Left -->
+            <div class="marquee-row reverse-animation">
+                <div class="marquee-content">
+                    <!-- A full set of images... -->
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home1.jpg"
+                                alt="Modern Living Room Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home2.jpg"
+                                alt="Cozy Bedroom Renovation"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home3.jpg"
+                                alt="Minimalist Kitchen Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home4.jpeg"
+                                alt="Elegant Dining Area Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+
+                    <!-- ...and the IDENTICAL duplicated set for the seamless loop -->
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home1.jpg"
+                                alt="Modern Living Room Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home2.jpg"
+                                alt="Cozy Bedroom Renovation"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home3.jpg"
+                                alt="Minimalist Kitchen Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home4.jpeg"
+                                alt="Elegant Dining Area Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central Header (Visible on large screens only) -->
+            <div class="d-none d-lg-block text-center text-dark py-3">
+                <div class="container">
+                    <!-- Flex container for responsive layout -->
+                    <div class="d-sm-flex justify-content-sm-evenly align-items-sm-center text-center text-sm-start">
+
+                        <!-- Left Side: Stylish Text -->
+                        <div>
+                            <h2 class="stylish-header-mobile mb-1">A Legacy of Design</h2>
+                            <p class="lead text-dark-50 mb-0">Explore our celebrated projects.</p>
+                        </div>
+
+                        <!-- Right Side: "See All" Button -->
+                        <div>
+                            <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2">
+                                See All
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Moves Left-to-Right -->
+            <div class="marquee-row">
+                <div class="marquee-content">
+                    <!-- A new set of images... -->
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home5.jpeg"
+                                alt="Luxury Bathroom Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets.renovated/home6.jpg"
+                                alt="Open-Plan Living Space"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home1.jpg"
+                                alt="Modern Living Room Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home3.jpg"
+                                alt="Minimalist Kitchen Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+
+                    <!-- ...and the IDENTICAL duplicated set for the seamless loop -->
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home5.jpeg"
+                                alt="Luxury Bathroom Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home6.jpg"
+                                alt="Open-Plan Living Space"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home1.jpg"
+                                alt="Modern Living Room Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home3.jpg"
+                                alt="Minimalist Kitchen Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 (Visible on small screens only) -->
+            <div class="d-lg-none marquee-row reverse-animation">
+                <div class="marquee-content">
+                    <!-- A third set of images... -->
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home2.jpg"
+                                alt="Cozy Bedroom Renovation"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home4.jpeg"
+                                alt="Elegant Dining Area Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home5.jpeg"
+                                alt="Luxury Bathroom Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home6.jpg"
+                                alt="Open-Plan Living Space"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+
+                    <!-- ...and the IDENTICAL duplicated set for the seamless loop -->
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home2.jpg"
+                                alt="Cozy Bedroom Renovation"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home4.jpeg"
+                                alt="Elegant Dining Area Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home5.jpeg"
+                                alt="Luxury Bathroom Renovation"><a href="#" class="review-overlay"><span>View Full
+                                    Review <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                    <div class="marquee-card">
+                        <div class="card-image-wrapper"><img src="assets/renovated/home6.jpg"
+                                alt="Open-Plan Living Space"><a href="#" class="review-overlay"><span>View Full Review
+                                    <i class="fas fa-arrow-right ms-2"></i></span></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Header (Redesigned for Mobile) -->
+            <div class="d-lg-none text-dark py-2">
+                <div class="container ">
+                    <!-- Flex container for responsive layout -->
+                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center text-center text-sm-start">
+
+                        <!-- Left Side: Stylish Text -->
+                        <div>
+                            <h2 class="stylish-header-mobile text-dark mb-1">A Legacy of Design</h2>
+                            <p class="lead text-dark mb-0">Explore our celebrated projects.</p>
+                        </div>
+
+                        <!-- Right Side: "See All" Button -->
+                        <div class="mt-3 mt-sm-0">
+                            <a href="#" class="btn btn-outline-dark rounded-pill px-4 py-2">
+                                See All
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- part2: step for staring -->
+    <!-- Start at Your Ease Section -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container text-center">
+            <!-- Main Title and Subtitle -->
+            <h2 class="fw-bold">Start at Your Ease</h2>
+            <p class="lead text-muted mb-5">Our simple, three-step process to begin your design journey.</p>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Step 1: Concepts -->
+                <div class="col-lg-3 d-flex align-items-stretch">
+                    <div class="step-card">
+                        <div class="icon-container mb-4">
+                            <img src="assets/bulb.png" alt="Idea" width="50">
+                        </div>
+                        <h5 class="fw-bold mb-2">1. Get Inspired</h5>
+                        <p class="text-muted">Explore concepts from multiple top-tier designers to find your unique
+                            style.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Consultation -->
+                <div class="col-lg-3 d-flex align-items-stretch">
+                    <div class="step-card">
+                        <div class="icon-container mb-4">
+                            <img src="assets/headset.png" alt="Consultation" width="50">
+                        </div>
+                        <h5 class="fw-bold mb-2">2. Consult an Expert</h5>
+                        <p class="text-muted">Receive a dedicated one-on-one consultation to refine your vision and
+                            plan.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Renovation -->
+                <div class="col-lg-3 d-flex align-items-stretch">
+                    <div class="step-card">
+                        <div class="icon-container mb-4">
+                            <img src="assets/building.png" alt="Renovation" width="50">
+                        </div>
+                        <h5 class="fw-bold mb-2">3. Begin Transformation</h5>
+                        <p class="text-muted">Watch your dream space come to life as we handle the entire renovation
+                            process.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- part2 : end -->
+
+    <!-- part3 : cx reviews -->
+    <div class="container my-5 py-5">
+        <div class="row align-items-center g-5">
+
+            <!-- Left Column: The Image -->
+            <div class="col-lg-4 text-center">
+                <!-- This is the circular container for the image with the hover effect -->
+                <div class="img-zoom-container mx-auto">
+                    <img src="assets/clients/cx_alfa.jpeg" alt="Portrait of the company founder" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Right Column: The Quotation -->
+            <div class="col-lg-8">
+                <blockquote class="blockquote">
+                    <p class="fs-4 fst-italic text-secondary">
+                        "A home is not just a place; it's a feeling, a living canvas. Our purpose at Pranna Interio is
+                        to breathe life into that canvas, creating a space that is a true reflection of you."
+                    </p>
+                    <figcaption class="blockquote-footer mt-3">
+                        <strong>Team Pranna Interio</strong>
+                    </figcaption>
+                </blockquote>
+            </div>
+
+        </div>
     </div>
 
 
 
 
 
+    <!-- part6: album of work -->
+    <!-- Our Work Album Section -->
+    <div class="container py-5 my-5">
+
+        <!-- Section Header -->
+        <div class="row mb-4">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="fw-bold">Our Work</h2>
+                <p class="text-muted lead">A collection of our finest projects, showcasing the transformative power of
+                    design. Each space is a testament to our commitment to quality and creativity.</p>
+            </div>
+        </div>
+
+        <!-- Filter Buttons (Updated with a "Bathrooms" category) -->
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center mb-4">
+                <ul class="nav nav-pills" id="portfolio-filters">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-filter="*">All</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-filter="living">Living Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-filter="kitchen">Kitchens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-filter="bedroom">Bedrooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-filter="bathroom">Bathrooms</a></li>
+                </ul>
+            </div>
+        </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+
+        <!-- Portfolio Grid (with new responsive classes) -->
+        <div class="row g-4" id="portfolio-grid">
+
+            <!-- Portfolio Item 1: Living Room -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="living">
+                <div class="portfolio-wrap">
+                    <img src="assets/renovated/home1.jpg" class="img-fluid" alt="Elegant Living Room">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="assets/renovated/home1.jpg" data-title="Elegant & Bright Living Space">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Bright Living Space</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 2: Kitchen -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="kitchen">
+                <div class="portfolio-wrap">
+                    <img src="assets/renovated/home2.jpg" class="img-fluid" alt="Modern Kitchen">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="assets/renovated/home2.jpg" data-title="Modern Kitchen Design">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Modern Kitchen</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 3: Bedroom -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="bedroom">
+                <div class="portfolio-wrap">
+                    <img src="assets/renovated/home4.jpeg" class="img-fluid" alt="Serene Bedroom">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="assets/renovated/home4.jpeg" data-title="Serene & Cozy Bedroom">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Serene Bedroom</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 4: Bathroom -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="bathroom">
+                <div class="portfolio-wrap">
+                    <img src="assets/renovated/home3.jpg" class="img-fluid" alt="Luxury Bathroom">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="assets/renovated/home3.jpg" data-title="Luxury Marble Bathroom">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Luxury Bathroom</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 5: Living Room -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="living">
+                <div class="portfolio-wrap">
+                    <img src="assets/renovated/home5.jpeg" class="img-fluid" alt="Minimalist Living Area">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="assets/renovated/home5.jpeg" data-title="Minimalist Reading Nook">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Minimalist Nook</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 6: Kitchen -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="kitchen">
+                <div class="portfolio-wrap">
+                    <img src="assets/renovated/home6.jpg" class="img-fluid" alt="Open Plan Dining Area">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="assets/renovated/home5.jpg" data-title="Open Plan Dining & Kitchen">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Open Dining</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 7: Bedroom -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="bedroom">
+                <div class="portfolio-wrap">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid" alt="Spacious Bedroom">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80"
+                        data-title="Spacious Modern Bedroom">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Spacious Bedroom</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 8: Bathroom -->
+            <div class="col-6 col-lg-3 portfolio-item" data-category="bathroom">
+                <div class="portfolio-wrap">
+                    <img src="assets/renovated/home5.jpeg" class="img-fluid" alt="Chic Bathroom">
+                    <a class="portfolio-overlay" href="#" data-bs-toggle="modal" data-bs-target="#portfolioModal"
+                        data-img-src="assets/renovated/home5.jpeg" data-title="Chic Tiled Bathroom">
+                        <div class="portfolio-info">
+                            <h5 class="text-white">Chic Bathroom</h5>
+                            <i class="fas fa-plus fa-2x"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Reusable Modal (Lightbox) -->
+    <div class="modal fade" id="portfolioModal" tabindex="-1" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white" id="portfolioModalLabel">Project Title</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <img id="portfolioModalImage" src="" class="img-fluid" alt="Portfolio work">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- states section  -->
+    <section id="stats-counter-section" class="stats-banner py-5 mb-2 text-white text-center bg-dark">
+        <div class="container">
+
+            <h2 class=" fw-bold mb-5 simplicity-header">Let our numbers do the talking!</h2>
+
+            <div class="row">
+
+                <!-- Stat 1 -->
+                <div class="col-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3 class="h2 fw-bold">
+                        <span class="counter" data-target="65000">0</span>+
+                    </h3>
+                    <p class="mb-0">#PrannaInterio</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="col-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3 class="h2 fw-bold">
+                        <span class="counter" data-target="1000">0</span>+
+                    </h3>
+                    <p class="mb-0">designers</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="col-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3 class="h2 fw-bold">
+                        <span class="counter" data-target="50">0</span>+
+                    </h3>
+                    <p class="mb-0">cities</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="col-6 col-lg-3">
+                    <h3 class="h2 fw-bold">
+                        <span class="counter" data-target="1">0</span>
+                    </h3>
+                    <p class="mb-0">countries</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End of Stats Banner Section -->
+
+
+    <!-- section : price calculator -->
+    <section class="estimator-section py-5">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" style="color: #4f435f;">Interior Price Estimator</h2>
+                <p class="text-muted">Calculate the approximate cost of doing up your interiors</p>
+            </div>
+
+            <!-- Estimator Cards -->
+            <div class="row justify-content-center g-4">
+
+                <!-- Card 1: Full Home -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column p-4 p-xl-5">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-house-heart main-icon"></i>
+                                <i class="bi bi-calculator-fill bg-icon"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Full Home</h5>
+                            <p class="card-text text-muted small mb-4">Get an approximate costing for your full home
+                                interiors.</p>
+                            <a href="#" class="btn btn-calculate rounded-pill mt-auto">CALCULATE &gt;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Kitchen -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column p-4 p-xl-5">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-fire main-icon"></i>
+                                <i class="bi bi-calculator-fill bg-icon"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Kitchen</h5>
+                            <p class="card-text text-muted small mb-4">Get an approximate costing for your kitchen
+                                interior.</p>
+                            <a href="#" class="btn btn-calculate rounded-pill mt-auto">CALCULATE &gt;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Wardrobe -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center d-flex flex-column p-4 p-xl-5">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-door-closed main-icon"></i>
+                                <i class="bi bi-calculator-fill bg-icon"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Wardrobe</h5>
+                            <p class="card-text text-muted small mb-4">Get an approximate costing for your wardrobe.</p>
+                            <a href="#" class="btn btn-calculate rounded-pill mt-auto">CALCULATE &gt;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- END -->
+
+
+
+
+
+
+    <!-- ALBUM ENDING : PART6 OVER -->
+
+    <!-- PART7 : VEDIO TOUR -->
+    <!-- Video Tour Section -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-lg-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">Take a Video Tour</h2>
+                    <p class="text-muted lead">
+                        Step inside our creations. Experience the flow, feel the ambiance, and see how our designs come
+                        to life from every angle.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Horizontally Scrollable Video Gallery -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="video-gallery-scroll">
+
+                        <!-- Video Card 1 -->
+                        <div class="video-card">
+                            <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                                <iframe src="https://www.youtube.com/embed/W_MfNQ9cv9M" title="Modern Loft Tour"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy">
+                                </iframe>
+                            </div>
+                            <div class="video-card-info">
+                                <h6 class="fw-bold mb-0">The Waterfront Loft</h6>
+                                <small class="text-muted">Ranchi, Jharkhand</small>
+                            </div>
+                        </div>
+
+                        <!-- Video Card 2 -->
+                        <div class="video-card">
+                            <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                                <iframe src="https://www.youtube.com/embed/OoPfKLr-39w?si=7cpCpB-VujFFiQaE"
+                                    title="Minimalist Home Design"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy">
+                                </iframe>
+                            </div>
+                            <div class="video-card-info">
+                                <h6 class="fw-bold mb-0">Daimond Retreat</h6>
+                                <small class="text-muted">Tata Jharkhand</small>
+                            </div>
+                        </div>
+
+                        <!-- Video Card 3 -->
+                        <div class="video-card">
+                            <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                                <iframe src="https://www.youtube.com/embed/g2XUYaxkttk?si=0qJDu3KdtQ_QBnie"
+                                    title="Luxury Apartment Tour"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy">
+                                </iframe>
+                            </div>
+                            <div class="video-card-info">
+                                <h6 class="fw-bold mb-0">The Park Avenue Penthouse</h6>
+                                <small class="text-muted">Dumka, IN</small>
+                            </div>
+                        </div>
+
+                        <!-- Video Card 4 (Add as many as you need) -->
+                        <div class="video-card">
+                            <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                                <iframe src="https://youtu.be/NlRrGrrRyNo?si=pIqGIxvEEsEtINZr"
+                                    title="Bohemian Home Tour"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy">
+                                </iframe>
+                            </div>
+                            <div class="video-card-info">
+                                <h6 class="fw-bold mb-0">The Berline Mention</h6>
+                                <small class="text-muted">Ranchi, IN</small>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END  -->
+
+    <!-- PART9 : SERVICABLE AREAS -->
+    <!-- Serviceable Area Section -->
+    <div class="container-fluid py-5">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-lg-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">Our Serviceable Area</h2>
+                    <p class="h5 fw-normal text-primary">Proudly Serving Jharkhand</p>
+                    <p class="text-muted mt-3">
+                        Currently, our design and renovation services are exclusively available throughout the state of
+                        Jharkhand. We're dedicated to bringing world-class interiors to our local communities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Horizontally Scrollable Location Gallery -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="location-gallery-scroll">
+
+                        <!-- Location Card 1: Ranchi -->
+                        <div class="location-card">
+                            <div class="ratio ratio-4x3">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234413.3496033903!2d85.1718715865239!3d23.34320253406211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e104aa5db7dd%3A0xdc95e153b2ab510!2sRanchi%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1698334584218!5m2!1sen!2sin"
+                                    title="Map of Ranchi, Jharkhand" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <div class="location-card-info">
+                                <p class="small text-muted mb-0">
+                                    Main Road, Hinoo, & Surrounding Areas, <br>
+                                    <span class="fw-bold text-uppercase text-dark">Ranchi</span>, Jharkhand
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Location Card 2: Jamshedpur -->
+                        <div class="location-card">
+                            <div class="ratio ratio-4x3">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117747.28782012484!2d86.12462378949826!3d22.78411885061453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e31989f0e2b5%3A0xee335243d5b127ee!2sJamshedpur%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1698334651336!5m2!1sen!2sin"
+                                    title="Map of Jamshedpur, Jharkhand" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <div class="location-card-info">
+                                <p class="small text-muted mb-0">
+                                    Bistupur, Sakchi, & Adityapur Regions, <br>
+                                    <span class="fw-bold text-uppercase text-dark">Jamshedpur</span>, Jharkhand
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Location Card 3: Dhanbad (Example) -->
+                        <div class="location-card">
+                            <div class="ratio ratio-4x3">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116641.1394520932!2d86.35338903792683!3d23.803379204092473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4181d2c6b3e9b%3A0x6d11a846e969542e!2sDhanbad%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1698334707644!5m2!1sen!2sin"
+                                    title="Map of Dhanbad, Jharkhand" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            <div class="location-card-info">
+                                <p class="small text-muted mb-0">
+                                    Bank More, Saraidhela, & City Center, <br>
+                                    <span class="fw-bold text-uppercase text-dark">Dhanbad</span>, Jharkhand
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Add more location cards as needed -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END -->
+
+
+    <!-- Happy Clients Section (Redesigned) -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-lg-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">Happy Clients</h2>
+                    <p class="text-muted lead">Hear from the people who now live in the spaces we've created.</p>
+                </div>
+            </div>
+
+            <!-- 1. The Large Desktop View -->
+            <div class="d-none d-lg-block mb-5">
+                <div class="row align-items-center g-5">
+                    <!-- Left Column: Review Text, Stars, and Name -->
+                    <div class="col-lg-6">
+                        <div class="client-review-desktop">
+                            <!-- Star Rating -->
+                            <div id="desktop-review-stars" class="star-rating mb-3">
+                                <!-- Stars will be dynamically inserted here by JS -->
+                            </div>
+                            <!-- Review Text (now with smaller font size) -->
+                            <p id="desktop-review-text" class="lead fst-italic">"The team at Pranna Interior completely
+                                transformed our home. They listened to every detail and the result is a space that is
+                                both beautiful and functional."</p>
+                            <!-- Client Name -->
+                            <figcaption id="desktop-review-name" class="blockquote-footer mt-4 fs-5">
+                                The Sharma Family
+                            </figcaption>
+                        </div>
+                    </div>
+                    <!-- Right Column: Project Image -->
+                    <div class="col-lg-6">
+                        <img id="desktop-project-img"
+                            src="https://images.unsplash.com/photo-1618221195710-dd6b41fa1299?auto=format&fit=crop&w=1200&q=80"
+                            alt="Renovated project" class="img-fluid rounded shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. The Horizontally Scrollable Gallery -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="client-feedback-scroll">
+
+                        <!-- Feedback Card 1 -->
+                        <div class="feedback-card active"
+                            data-review="The team at Pranna Interior completely transformed our home. They listened to every detail and the result is a space that is both beautiful and functional. It's more than we could have ever dreamed of."
+                            data-name="The Sharma Family" data-rating="5"
+                            data-client-img="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=60"
+                            data-project-img="https://images.unsplash.com/photo-1618221195710-dd6b41fa1299?auto=format&fit=crop&w=1200&q=80">
+
+                            <div class="feedback-card-content">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=60"
+                                    alt="Client 1" class="client-avatar">
+                                <p class="fw-bold mt-2 mb-1">The Sharma Family</p>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feedback Card 2 -->
+                        <div class="feedback-card"
+                            data-review="Working with Pranna was a seamless experience from start to finish. Their professionalism and creative vision are unmatched. I highly recommend them to anyone looking for a high-end design."
+                            data-name="Ankit Singh" data-rating="5"
+                            data-client-img="https://images.unsplash.com/photo-1624561172888-ac93c696e10c?auto=format&fit=crop&w=400&q=60"
+                            data-project-img="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=80">
+
+                            <div class="feedback-card-content">
+                                <img src="https://images.unsplash.com/photo-1624561172888-ac93c696e10c?auto=format&fit=crop&w=400&q=60"
+                                    alt="Client 2" class="client-avatar">
+                                <p class="fw-bold mt-2 mb-1">Ankit Singh</p>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feedback Card 3 -->
+                        <div class="feedback-card"
+                            data-review="I was nervous about renovating, but the Pranna team made it so easy. They handled everything and kept me updated every step of the way. I'm in love with my new kitchen!"
+                            data-name="Priya Patel" data-rating="4"
+                            data-client-img="https://images.unsplash.com/photo-1621784564114-6eea05b89863?auto=format&fit=crop&w=400&q=60"
+                            data-project-img="https://images.unsplash.com/photo-1600607686527-6fb886292201?auto=format&fit=crop&w=1200&q=80">
+
+                            <div class="feedback-card-content">
+                                <img src="https://images.unsplash.com/photo-1621784564114-6eea05b89863?auto=format&fit=crop&w=400&q=60"
+                                    alt="Client 3" class="client-avatar">
+                                <p class="fw-bold mt-2 mb-1">Priya Patel</p>
+                                <div class="star-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END -->
+
+    <!-- PART10: FOTTER SECTION -->
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+
+                <!-- Column 1: Logo and Description -->
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <!-- Your Logo SVG -->
+                    <div style="width: 200px; color: white;" class="mb-3">
+                        <svg width="280" height="140" viewBox="0 0 300 150" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g fill="currentColor">
+                                <!-- The Frame -->
+                                <path d="M50 30 H 250 V 120 H 50 V 30 Z M 52 32 V 118 H 248 V 32 H 52 Z" />
+
+                                <!-- Wordmark "Pranna" in a bold script style -->
+                                <text x="150" y="80" font-family="'Brush Script MT', 'Brush Script Std', 'cursive'"
+                                    font-size="50" font-weight="700" text-anchor="middle"
+                                    dominant-baseline="middle">Pranna</text>
+
+                                <!-- Supporting text "INTERIOR" -->
+                                <text x="150" y="110" font-family="'Montserrat', 'sans-serif'" font-size="12"
+                                    font-weight="500" text-anchor="middle" letter-spacing="0.2em">INTERIOR</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="text-white-50">With a focus on quality, convenience, and transparency, we make beautiful
+                        interiors easy and affordable for everyone.</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Company -->
+                <div class="col-lg-2 col-md-6 mb-5">
+                    <h5 class="footer-heading">Company</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Work</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Us -->
+                <div class="col-lg-4 col-md-6 mb-5">
+                    <h5 class="footer-heading">Contact Us</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-phone"></i><span>+91 9243-122221</span></li>
+                        <li><i class="fas fa-envelope"></i><span>contact@prannainterior.com</span></li>
+                    </ul>
+                    <div class="social-icons mt-4">
+                        <a href="subfolder/blog.html" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sub-footer with Copyright -->
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2025 Ak production. All Rights Reserved. Designed & Developed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- END -->
+
+    <!-- Optional: WhatsApp Floating Button -->
+    <a href="https://wa.me/919243122221" target="_blank" class="whatsapp-fab shadow-lg">
+        <i class="fab fa-whatsapp me-2"></i> Get in touch
+    </a>
+    <!-- END -->
+
+
+
+
+
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/custom.js"></script>
 
 
 </body>

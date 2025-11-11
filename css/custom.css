@@ -1,0 +1,1117 @@
+/* --- THE FIX: Start all caption elements hidden by default --- */
+.carousel-caption h1,
+.carousel-caption p,
+.carousel-caption .btn {
+    opacity: 0;
+}
+
+/* --- THE ANIMATIONS (apply only to the active item) --- */
+/* The animation keyframes remain the same */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation with delays to the active caption's content */
+.carousel-item.active .carousel-caption h1 {
+    animation: fadeInUp 0.8s ease-in-out 0.2s forwards;
+    /* Added a tiny delay for smoothness */
+}
+
+.carousel-item.active .carousel-caption p {
+    animation: fadeInUp 0.8s ease-in-out 0.5s forwards;
+}
+
+.carousel-item.active .carousel-caption .btn {
+    animation: fadeInUp 0.8s ease-in-out 0.8s forwards;
+}
+
+/* --- OVERALL LAYOUT AND NAVBAR --- */
+
+/* 1. Set the height of the entire hero section to 80% of the viewport height */
+.header-container {
+    height: 80vh;
+    min-height: 500px;
+    /* A minimum height for smaller screens */
+}
+
+/* Ensure the carousel and its inner components fill the container */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    height: 100%;
+}
+
+/* Make the Navbar semi-transparent and keep it on top */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    z-index: 3;
+    /* Navbar is the topmost layer */
+}
+
+
+/* --- IMAGE EFFECTS --- */
+
+/* 2. Style the image to cover the area without stretching */
+.carousel-item img {
+    height: 100%;
+    object-fit: cover;
+    /* This is key to prevent distortion */
+    object-position: center;
+}
+
+/* Add a dark overlay to carousel images to make text more readable */
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Slow zoom (Ken Burns) effect for the active image */
+.carousel-item {
+    overflow: hidden;
+    /* Important for the zoom effect */
+}
+
+@keyframes kenburns-zoom-in {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+.carousel-item.active img {
+    animation: kenburns-zoom-in 8s linear forwards;
+}
+
+
+/* --- CAPTION & TEXT EFFECTS --- */
+
+/* 3. Override default caption styles to center the content */
+.carousel-caption {
+    /* Reset Bootstrap defaults */
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* New styles for centering */
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    /* Position caption above the image overlay */
+}
+
+/* 4. Define the fade-in-up animation for the text */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation with delays to the active caption's content */
+.carousel-item.active .carousel-caption h1 {
+    animation: fadeInUp 0.8s ease-in-out forwards;
+    opacity: 0;
+    /* Start hidden */
+}
+
+.carousel-item.active .carousel-caption p {
+    animation: fadeInUp 0.8s ease-in-out 0.3s forwards;
+    /* 0.3s delay */
+    opacity: 0;
+    /* Start hidden */
+}
+
+.carousel-item.active .carousel-caption .btn {
+    animation: fadeInUp 0.8s ease-in-out 0.6s forwards;
+    /* 0.6s delay */
+    opacity: 0;
+    /* Start hidden */
+}
+
+
+
+/* Styling for the "Start at Your Ease" section */
+
+.step-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    /* Softer, rounded corners */
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* A very subtle, modern shadow */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for all properties */
+}
+
+/* The hover effect to make the cards feel interactive */
+.step-card:hover {
+    transform: translateY(-10px);
+    /* Lifts the card up slightly */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    /* A more pronounced shadow on hover */
+}
+
+/* The circular container for the icons */
+.icon-container {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    /* Centers the circle horizontally */
+    border-radius: 50%;
+
+    /* A professional way to use Bootstrap's theme color with opacity */
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+
+    /* Flexbox to perfectly center the icon image inside the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 1. The circular container for the image */
+.img-zoom-container {
+    width: 280px;
+    /* You can adjust the size of the circle */
+    height: 280px;
+    border-radius: 50%;
+    /* This makes the container a circle */
+    overflow: hidden;
+    /* This is crucial for clipping the zooming image */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* A subtle, modern shadow */
+    border: 5px solid white;
+    /* Optional: A white border can make it pop */
+}
+
+/* 2. The image itself inside the container */
+.img-zoom-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the circle without distortion */
+    transition: transform 0.4s ease-out;
+    /* Smooth transition for the zoom effect */
+}
+
+/* 3. The zoom effect on hover */
+.img-zoom-container:hover img {
+    transform: scale(1.1);
+    /* Zooms the image to 110% of its size */
+}
+
+
+
+
+/* --- CAPTION & TEXT EFFECTS --- */
+
+/* 3. Override default caption styles to center the content */
+.carousel-caption {
+    /* Reset Bootstrap defaults */
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* New styles for centering */
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    /* Position caption above the image overlay */
+}
+
+/* 4. Define the fade-in-up animation for the text */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation with delays to the active caption's content */
+.carousel-item.active .carousel-caption h1 {
+    animation: fadeInUp 0.8s ease-in-out forwards;
+    opacity: 0;
+    /* Start hidden */
+}
+
+.carousel-item.active .carousel-caption p {
+    animation: fadeInUp 0.8s ease-in-out 0.3s forwards;
+    /* 0.3s delay */
+    opacity: 0;
+    /* Start hidden */
+}
+
+.carousel-item.active .carousel-caption .btn {
+    animation: fadeInUp 0.8s ease-in-out 0.6s forwards;
+    /* 0.6s delay */
+    opacity: 0;
+    /* Start hidden */
+}
+
+
+
+
+/* part 4: meet our team */
+/* Styling for the Team Section Cards */
+
+.team-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    /* Matches the rounded corners from previous sections */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    /* This is crucial for keeping the image within the rounded corners */
+    text-align: center;
+}
+
+/* Add the lift-up hover effect */
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for the image, which will position the overlay */
+.team-card-img-container {
+    position: relative;
+}
+
+/* The dark overlay that appears on hover */
+.team-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--bs-primary-rgb), 0.7);
+    /* Bootstrap's primary color with 70% opacity */
+
+    /* Center the social icons inside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Hide it by default and prepare for fade-in */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Make the overlay visible when hovering over the *entire card* */
+.team-card:hover .team-card-overlay {
+    opacity: 1;
+}
+
+/* Styling for the social media icons */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 1rem;
+    margin: 0 5px;
+    text-decoration: none;
+
+    /* Center the icon inside its circle */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #ffffff;
+    color: var(--bs-primary);
+    /* Use Bootstrap's primary color for the icon */
+    transform: scale(1.1);
+}
+
+/* Padding for the text content below the image */
+.team-card-body {
+    padding: 1.5rem;
+}
+
+
+/* part4 end */
+
+
+/* part5: before and ::after */
+/* part5 :end */
+
+
+/* part6: ALBUM */
+/* --- Styling for the Portfolio Album --- */
+
+.portfolio-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.portfolio-wrap img {
+    transition: transform 0.4s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--bs-primary-rgb), 0.75);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.portfolio-info {
+    text-align: center;
+    color: #fff;
+}
+
+.portfolio-info i {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+/* --- Hover Effects --- */
+
+.portfolio-wrap:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-wrap:hover img {
+    transform: scale(1.1);
+    /* Zoom the image inside */
+}
+
+.portfolio-wrap:hover .portfolio-overlay {
+    opacity: 1;
+    /* Fade in the overlay */
+}
+
+/* --- Styling for Filter Buttons --- */
+#portfolio-filters .nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+#portfolio-filters .nav-link.active {
+    color: #fff;
+    background-color: var(--bs-primary);
+}
+
+/* END */
+
+
+/* PART7 : VEDIO TOUR */
+/* Styling for the Video Tour Section */
+
+/* The main container for the scrollable gallery */
+.video-gallery-scroll {
+    display: flex;
+    overflow-x: auto;
+    /* This is key for horizontal scrolling */
+    flex-wrap: nowrap;
+    /* Prevents items from wrapping to the next line */
+    gap: 1.5rem;
+    /* Creates space between the video cards */
+    padding-bottom: 1rem;
+    /* Adds space for the scrollbar below the cards */
+}
+
+/* Individual video card in the gallery */
+.video-card {
+    /* Define the size of the cards. flex-shrink prevents them from squishing */
+    flex: 0 0 80%;
+    /* On small screens, a card takes up 80% of the width */
+    max-width: 400px;
+}
+
+/* On larger screens, make the cards a fixed width */
+@media (min-width: 768px) {
+    .video-card {
+        flex: 0 0 350px;
+    }
+}
+
+/* The text information below the video */
+.video-card-info {
+    padding-top: 1rem;
+}
+
+
+/* --- Custom Scrollbar Styling (for a professional touch) --- */
+/* This works on Webkit browsers like Chrome, Safari, Edge */
+
+.video-gallery-scroll::-webkit-scrollbar {
+    height: 8px;
+    /* Height of the scrollbar */
+}
+
+.video-gallery-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* The track (the background of the scrollbar) */
+    border-radius: 10px;
+}
+
+.video-gallery-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    /* The draggable scrolling handle */
+    border-radius: 10px;
+}
+
+.video-gallery-scroll::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+    /* Color of the handle on hover */
+}
+
+/* // END */
+
+
+
+/* PART8 : STICKY CONTACT US */
+/* --- Styling for the "Get a Quote" Feature --- */
+
+/* The floating trigger button */
+.get-quote-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1040;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.get-quote-fab:hover {
+    transform: scale(1.05);
+}
+
+/* The blurred background effect (unchanged) */
+.modal-backdrop {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: rgba(26, 37, 60, 0.5) !important;
+}
+
+.modal-backdrop.fade {
+    opacity: 1 !important;
+}
+
+/* --- NEW MODAL STYLING --- */
+
+/* 1. Control the size of the modal dialog ("medium" size) */
+.modal-quote-dialog {
+    max-width: 480px;
+}
+
+/* 2. Style the modal content as a modern card */
+.modal-quote-content {
+    border: none;
+    border-radius: 1rem;
+    /* Softer, more modern border radius */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+}
+
+/* 3. Style the pill-shaped, rounded input fields */
+.modal-quote-content .form-control {
+    border-radius: 50rem;
+    padding-left: 1.5rem;
+    /* Add space for text inside the rounded input */
+}
+
+.modal-quote-content .form-floating>label {
+    padding-left: 1.5rem;
+    /* Align the floating label with the input text */
+}
+
+/* 4. Style the new submit button */
+.btn-quote-submit {
+    background-color: #1a253c;
+    /* Professional dark blue */
+    border-color: #1a253c;
+    color: #fff;
+    border-radius: 50rem;
+    /* Match the inputs */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-quote-submit:hover {
+    background-color: #2c3e5e;
+    /* A slightly lighter blue for hover */
+    border-color: #2c3e5e;
+    transform: scale(1.02);
+}
+
+/* END */
+
+
+/* PART9: SERVIABLE AREAS */
+/* Styling for the Serviceable Area Section */
+
+/* The main container for the scrollable gallery */
+.location-gallery-scroll {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Individual location card in the gallery */
+.location-card {
+    flex: 0 0 85%;
+    /* On small screens, a card takes up most of the width */
+    max-width: 340px;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    /* Crucial for applying border-radius to the map */
+    transition: all 0.3s ease;
+}
+
+/* On larger screens, adjust the card size */
+@media (min-width: 768px) {
+    .location-card {
+        flex-basis: 320px;
+    }
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* The text information below the map */
+.location-card-info {
+    padding: 1rem 1.25rem;
+}
+
+
+/* --- Reusable Custom Scrollbar Styling --- */
+.location-gallery-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.location-gallery-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.location-gallery-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.location-gallery-scroll::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* END */
+
+
+
+/* PART10: FOTTER SECTION */
+/* --- Main Footer Styling --- */
+.site-footer {
+    background-color: #212529;
+    /* Bootstrap's 'dark' color */
+    color: #adb5bd;
+    /* Bootstrap's 'gray-600' for muted text */
+    padding-top: 4rem;
+    font-size: 0.9rem;
+}
+
+.footer-heading {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* The yellow underline for headings */
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #ffc107;
+    /* Bootstrap's 'warning' yellow/gold */
+}
+
+/* Styling for the link lists */
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* Styling for the contact info list */
+.contact-info li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.contact-info i {
+    color: #ffc107;
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-top: 4px;
+    /* Aligns icon with the first line of text */
+}
+
+/* Social media icon styling */
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+/* --- Sub-footer Styling --- */
+.footer-bottom {
+    background-color: #000000;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+    /* Bootstrap's 'secondary' color */
+}
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    /* Note: May conflict with your 'Get a Quote' button */
+    z-index: 1040;
+    background-color: #25D366;
+    color: #ffffff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 50rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-fab:hover {
+    background-color: #1DA851;
+    transform: scale(1.05);
+}
+
+/* END */
+
+
+/* PART 11 : HAPPY CLIENT */
+/* Styling for the Happy Clients Section */
+/* --- Styling for the Happy Clients Section (Redesigned) --- */
+
+/* Star Rating Styling */
+.star-rating i {
+    color: #ffc107;
+    /* Bootstrap's 'warning' yellow */
+    font-size: 1rem;
+}
+
+.desktop-review-stars .star-rating i {
+    font-size: 1.25rem;
+    /* Make stars slightly larger on desktop view */
+}
+
+/* Horizontally scrollable container */
+.client-feedback-scroll {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* --- Redesigned Mobile/Thumbnail Card --- */
+.feedback-card {
+    flex: 0 0 250px;
+    height: 320px;
+    border-radius: 0.75rem;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+
+    /* Background image setup (will be set by JS) */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Dark overlay for text readability */
+.feedback-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 60%);
+}
+
+/* Content inside the card (avatar, name, stars) */
+.feedback-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    z-index: 2;
+    /* Sits on top of the overlay */
+    text-align: center;
+}
+
+.client-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Active state for the selected card */
+.feedback-card.active {
+    border-color: var(--bs-primary);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Reusable Custom Scrollbar --- */
+.client-feedback-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.client-feedback-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.client-feedback-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.client-feedback-scroll::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* END */
+
+
+
+
+
+
+
+
+
+
+/* dyanamic album  */
+
+
+
+
+/* --- Dynamic Scrolling Review Section (Redesigned) --- */
+.dynamic-review-section {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    overflow: hidden;
+}
+
+/* Unchanged Marquee Animation Logic */
+.marquee-row {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    animation: marquee-left 60s linear infinite;
+}
+
+.marquee-row.reverse-animation .marquee-content {
+    animation-name: marquee-right;
+}
+
+.marquee-row:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-right {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* --- NEW: The Framed Card with Responsive Sizing --- */
+.marquee-card {
+    display: block;
+
+    /* --- THE KEY CHANGE --- */
+    /* Use viewport width for responsive sizing. 23vw is ~1/4 of the screen, leaving space for gaps. */
+    width: 23vw;
+
+    /* --- SAFEGUARDS --- */
+    /* Set a max-width to prevent cards from getting huge on very large desktop monitors. */
+    max-width: 300px;
+    /* Set a min-width to prevent cards from becoming too tiny on very small mobile screens. */
+    min-width: 200px;
+
+    /* --- Unchanged styling --- */
+    margin: 0 0.75rem;
+    /* Slightly reduced margin for a denser look */
+    padding: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    transition: all 0.4s ease-in-out;
+}
+
+/* --- NEW: Wrapper for the Image + Overlay --- */
+.card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6rem;
+    /* Slightly smaller radius than the card */
+}
+
+/* --- UPDATED: Image Styling --- */
+.card-image-wrapper img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Enforces a cinematic rectangle format */
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* --- UPDATED: Hover Overlay --- */
+.review-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-decoration: none;
+}
+
+.review-overlay span {
+    color: #f7f7f7;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+/* --- Orchestrated Hover Effects --- */
+.marquee-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.marquee-card:hover .card-image-wrapper img {
+    transform: scale(1.1);
+}
+
+.marquee-card:hover .review-overlay {
+    opacity: 1;
+}
+
+.marquee-card:hover .review-overlay span {
+    transform: translateY(0);
+}
+
+
+
+
+
+.stylish-header-mobile {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    /* A strong but not overwhelming size for mobile */
+    line-height: 1.2;
+}
+
+.simplicity-header {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    /* text-shadow: 4px 4px 4px #aaa; */
+}
+
+
+
+
+.query_form {
+
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    /* text-shadow: 4px 4px 4px #aaa; */
+}
+
+
+.stats-banner {
+    background-color: #589d81 !important;
+}
+
+
+
+
+
+/* Custom Styles for the Estimator Section */
+.estimator-section .card {
+    border-radius: 1rem;
+    /* Softer, rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    /* Hide the overflowing background icon */
+}
+
+.estimator-section .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-wrapper {
+    position: relative;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.main-icon {
+    font-size: 3.5rem;
+    /* Main icon size */
+    color: #d1d1d1;
+    position: relative;
+    z-index: 2;
+}
+
+.bg-icon {
+    position: absolute;
+    font-size: 5rem;
+    /* Background icon size */
+    color: #f7f7f7;
+    opacity: 0.9;
+    right: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.btn-calculate {
+    background-color: #e5595a;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-calculate:hover {
+    background-color: #d14849;
+    color: white;
+}
