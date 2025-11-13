@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/contact_us.css">
+
+    <!-- ... other head tags ... -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+</head>
+
+
+
+
+
+
+<body>
+
+    <!-- 1. HEADER FOR SMALLER SCREENS -->
+    <!-- <header class="d-lg-none bg-branding text-white p-3 shadow-sm">
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+            <i class="bi bi-shield-lock-fill fs-2 me-3"></i>
+            <span class="fs-4 fw-bold query_form ">Pranna Interio</span>
+        </div>
+    </header> -->
+
+    <!-- Simple Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand h2" href="#">Pranna Interio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#image_gallery">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. MAIN CONTENT WRAPPER -->
+    <div class="container-fluid wrapper-container">
+        <div class="row full-height-lg">
+            <!-- A. BRANDING SIDE -->
+            <div class="col-lg-6 d-none d-lg-flex bg-branding text-white align-items-center justify-content-center">
+                <div class="text-center p-5">
+                    <a class="text-white" href='../index.html'><svg width="280" height="140" viewBox="10 0 300 100"
+                            fill="none" xmlns="">
+                            <g fill="currentColor">
+                                <!-- The Frame -->
+                                <path d="M50 30 H 250 V 120 H 50 V 30 Z M 52 32 V 118 H 248 V 32 H 52 Z" />
+
+                                <!-- Wordmark "Pranna" in a bold script style -->
+                                <text x="150" y="80" font-family="'Brush Script MT', 'Brush Script Std', 'cursive'"
+                                    font-size="50" font-weight="700" text-anchor="middle"
+                                    dominant-baseline="middle">Pranna</text>
+
+                                <!-- Supporting text "INTERIOR" -->
+                                <text x="150" y="110" font-family="'Montserrat', 'sans-serif'" font-size="12"
+                                    font-weight="500" text-anchor="middle" letter-spacing="0.2em">INTERIO</text>
+                            </g>
+                        </svg></a>
+                    <i class="bi bi-shield-lock-fill" style="font-size: 6rem;"></i>
+                    <h1 class="display-4 fw-bold my-4 simplicity-header">Welcome to Pranna Interio</h1>
+                    <p class="lead">
+                        Holding a 95.56% customer satisfaction record.
+                    </p>
+                </div>
+            </div>
+
+            <!-- B. FORM SIDE -->
+            <div class="col-lg-6 d-flex align-items-center justify-content-center form-section">
+                <div class="p-4 border-0 shadow-lg rounded-3 "
+                    style="max-width: 450px; width: 100%; background-color: #fff;">
+                    <h2 class="text-center mb-4 query_form">Get a Quick Consultancy</h2>
+                    <p class="text-center text-muted mb-4">Get started with a free trial today.</p>
+
+                    <form id="contact_us_form">
+
+                        <!-- FLOATING LABEL: Name Input -->
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control form-control-lg" id="inputName"
+                                placeholder="John Doe" name='name'>
+                            <label for="inputName">Full Name</label>
+                        </div>
+
+                        <!-- FLOATING LABEL: Email Input -->
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control form-control-lg" id="inputEmail"
+                                placeholder="name@example.com" name='email'>
+                            <label for="inputEmail">Email address</label>
+                        </div>
+
+                        <!-- FLOATING LABEL: Phone Number Input -->
+                        <div class="form-floating mb-3">
+                            <input type="tel" class="form-control form-control-lg" id="inputPhone"
+                                placeholder="(123) 456-7890" name='phone_number'>
+                            <label for="inputPhone">Phone Number</label>
+                        </div>
+
+                        <!-- Muted Text -->
+                        <p class="form-text text-muted mb-3 px-1">
+                            We will never share your email or phone with anyone else.
+                        </p>
+                        <!-- Muted Text -->
+
+
+
+
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg btn-submit-energetic">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+        const form = document.getElementById('contact_us_form');
+        const scriptURL = 'https://formspree.io/f/mblqlzaw';
+
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const submitButton = form.querySelector('button');
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    console.log('Success!', response);
+                    // This one line shows a beautiful modal
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Success!',
+                        // Use the 'html' property to include a link
+                        html:
+                            'Your submission has been received! <br>' +
+                            'You can now <a href="../index.html">return to the homepage</a>.',
+                    });
+                    // Optional: reset the form and re-enable the button
+                    form.reset();
+                    submitButton.textContent = 'Submit';
+                    submitButton.disabled = false;
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        // Use the 'html' property to include a link
+                        html:
+                            'Your submission has been received! <br>' +
+                            'You can now <a href="../index.html">return to the homepage</a>.',
+                    });
+
+                    form.reset();
+                    submitButton.textContent = 'Submit';
+                    submitButton.disabled = false;
+                    // window.location.replace('blog.html'); 
+                });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>

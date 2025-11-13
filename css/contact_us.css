@@ -1,0 +1,59 @@
+
+
+/* Custom style to make the two-column layout full-height */
+.full-height-lg {
+    min-height: 100vh;
+}
+
+/* Custom solid color for branding */
+.bg-branding {
+    background-color: #041c41;
+}
+
+/* On smaller screens, add vertical padding */
+@media (max-width: 991.98px) {
+    .form-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* ================================================= */
+/* ==  NEW STYLES FOR ENERGETIC FORM CONTROLS     == */
+/* ================================================= */
+
+/* General style for all form controls in this form */
+.form-control-lg {
+    /* Smoothly transition changes to border and shadow */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-width: 2px;
+    /* Make the border slightly thicker */
+}
+
+/* Style for when the input is focused (active) */
+.form-control-lg:focus {
+    border-color: #0d6efd;
+    /* A vibrant primary blue for focus */
+    /* A matching blue glow, overriding Bootstrap's default */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Floating labels need a bit of adjustment for lg size */
+.form-floating>.form-control-lg {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+    height: calc(3.5rem + 4px);
+    /* Taller to accommodate the label */
+}
+
+/* Dynamic style for the submit button */
+.btn-submit-energetic {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.btn-submit-energetic:hover {
+    transform: translateY(-3px);
+    /* "Lifts" the button on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+

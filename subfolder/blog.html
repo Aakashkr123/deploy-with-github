@@ -3,11 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog page</title>
+    <title>The Ultimate Guide to Designing Your Dream Living Room - Pranna Interio Blog</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #fdfdfd;
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- Parallax Header --- */
+        .parallax-header {
+            background-image: url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2127&auto=format&fit=crop');
+            min-height: 70vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .parallax-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        .header-content h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .article-meta {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .article-content img {
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        blockquote {
+            border-left: 4px solid #0d6efd;
+            padding-left: 1.5rem;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #555;
+            margin: 2rem 0;
+        }
+
+        .cta-section {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .parallax-header {
+                background-attachment: scroll; /* Disable parallax on mobile for performance */
+            }
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            .alternating-section .row {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    hey you are at blog page
+    <!-- Simple Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Pranna Interio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#image_gallery">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact_us.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Parallax Header Section -->
+    <header class="parallax-header">
+        <div class="header-content" data-aos="fade-in" data-aos-duration="1500">
+            <h1 class="display-3">The Ultimate Guide to Designing Your Dream Living Room</h1>
+        </div>
+    </header>
+
+    <!-- Main Article Content -->
+    <main class="container my-5 article-content">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <!-- Article Meta -->
+                <p class="article-meta text-center mb-5" data-aos="fade-up">
+                    By Jane Doe | Published on July 26, 2024 | 10 min read
+                </p>
+
+                <!-- Introduction -->
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">
+                    Your living room is more than just a space; it's the heart of your home. It's where you relax, entertain, and make memories. But transforming a blank canvas into a functional and beautiful living room can feel daunting. This guide will walk you through the essential steps, from finding your style to adding the perfect finishing touches.
+                </p>
+
+                <!-- Section 1: Define Your Style -->
+                <section class="my-5 py-4">
+                    <h2 class="mb-4" data-aos="fade-right">Step 1: Discover Your Personal Style</h2>
+                    <p data-aos="fade-up">
+                        Before you buy a single pillow, it's crucial to define your aesthetic. Are you drawn to the clean lines of Minimalism, the cozy textures of Scandinavian design, or the eclectic vibe of Bohemian? Browse platforms like Pinterest and Instagram, and save images that resonate with you. Look for common themes in color, furniture shape, and overall mood.
+                    </p>
+                    <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop" class="img-fluid my-4" alt="A modern, stylish living room" data-aos="zoom-in" data-aos-duration="800">
+                </section>
+
+                <!-- Section 2: Layout & Flow -->
+                <section class="my-5 py-4 alternating-section">
+                    <h2 class="mb-4" data-aos="fade-left">Step 2: Master the Layout and Flow</h2>
+                    <div class="row align-items-center g-5">
+                        <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+                            <p>A great layout is all about creating a space that's both comfortable and easy to navigate. Start by identifying the room's focal point—this could be a fireplace, a large window, or a media unit. Arrange your main seating around it to encourage conversation. Ensure there are clear pathways to walk through the room without bumping into furniture. A good rule of thumb is to leave at least 3 feet of space for major traffic routes.</p>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-left" data-aos-delay="100">
+                            <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1998&auto=format&fit=crop" class="img-fluid" alt="Well-arranged living room furniture">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pull Quote -->
+                <blockquote data-aos="fade-up">
+                    "Lighting is the magical ingredient that makes a house a home. It creates mood, drama, and intrigue in a room."
+                </blockquote>
+
+                <!-- Section 3: Lighting -->
+                 <section class="my-5 py-4 alternating-section">
+                    <h2 class="mb-4" data-aos="fade-right">Step 3: Layer Your Lighting</h2>
+                    <div class="row align-items-center g-5 flex-row-reverse">
+                        <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                            <p>Proper lighting can completely change the atmosphere of a room. Aim for a layered approach with three types of lighting:
+                            <br><strong>Ambient:</strong> The main source of light, like a chandelier or recessed lighting.
+                            <br><strong>Task:</strong> Focused light for activities like reading, such as a floor or table lamp.
+                            <br><strong>Accent:</strong> Used to highlight architectural features or artwork.</p>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                             <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1932&auto=format&fit=crop" class="img-fluid" alt="Living room with beautiful ambient and task lighting">
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Section 4: Finishing Touches -->
+                <section class="my-5 py-4">
+                    <h2 class="mb-4" data-aos="fade-up">Step 4: Add the Finishing Touches</h2>
+                    <p data-aos="fade-up">This is where the room's personality truly comes to life. Incorporate textiles like rugs, curtains, and throw pillows to add texture and warmth. Hang art that you love—it doesn't have to be expensive to make a statement. Finally, bring in some life with indoor plants. They purify the air and add a beautiful, natural element to your design.</p>
+                     <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2158&auto=format&fit=crop" class="img-fluid my-4" alt="Close up of a decorative vase and plant" data-aos="zoom-in-up" data-aos-duration="800">
+                </section>
+                
+                <!-- Call to Action Section -->
+                <section class="p-5 my-5 cta-section" data-aos="flip-up" data-aos-duration="1000">
+                    <h3 class="mb-3">Ready to Create Your Dream Space?</h3>
+                    <p class="mb-4">If you're feeling inspired but want a professional touch, Pranna Interio is here to help. We turn your vision into a reality.</p>
+                    <a href="contact_us.html" class="btn btn-primary btn-lg">Get a Free Consultation</a>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-light">
+        <p class="mb-0 text-muted">&copy; 2025 Pranna Interio. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- AOS (Animate On Scroll) Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800, // values from 0 to 3000, with step 50ms
+            once: true,    // whether animation should happen only once - while scrolling down
+        });
+    </script>
+
 </body>
 </html>
