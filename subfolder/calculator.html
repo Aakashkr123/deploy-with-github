@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranna Interio | Price Calculator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts for a nicer look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/calculator.css">
+</head>
+
+<body>
+
+    <!-- New Header Section -->
+    <header class="header-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo-area">
+                <h4 class="mb-0"> <a href="../index.html" class="text-decoration-none text-secondary-emphasis">Pranna Interio </a></h4>
+            </div>
+
+            <!-- Stepper is now in the header -->
+            <div class="stepper-area">
+                <div class="stepper-wrapper">
+                    <div class="stepper-item">
+                        <div class="step-counter"></div>
+                        <div class="step-name">BHK Type</div>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-counter"></div>
+                        <div class="step-name">Rooms</div>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-counter"></div>
+                        <div class="step-name">Package</div>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-counter"></div>
+                        <div class="step-name">Quote</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-count-area">
+                <span id="step-counter-display" class="fw-bold">1/4</span>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="calculator-container">
+        <!-- Main Content Card -->
+        <div class="card shadow-lg p-4 p-md-5">
+            <form id="contact-form" action="https://formspree.io/f/mblqlzaw" method="POST">
+                <!-- Step 1: BHK Type -->
+                <div class="step" id="step-1">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold">Select your BHK type</h4>
+                        <p class="text-muted">To know more about this, <a href="#" class="link-danger">click here</a>
+                        </p>
+                    </div>
+
+                    <div class="bhk-options">
+                        <!-- 1 BHK -->
+                        <div class="bhk-option-item">
+                            <input type="radio" id="bhk1" name="bhk_type" value="1bhk" class="form-check-input">
+                            <label for="bhk1" class="bhk-label">1 BHK</label>
+                        </div>
+
+                        <!-- 2 BHK -->
+                        <div class="bhk-option-item">
+                            <input type="radio" id="bhk2" name="bhk_type" value="2bhk" class="form-check-input"
+                                data-bs-toggle="collapse" data-bs-target="#bhk2-details">
+                            <label for="bhk2" class="bhk-label d-flex justify-content-between align-items-center">2 BHK
+                                <i class="bi bi-chevron-down"></i></label>
+                            <div class="collapse" id="bhk2-details" data-bs-parent=".bhk-options">
+                                <div class="bhk-sub-options">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bhk_size" id="bhk2-small"
+                                            value="small">
+                                        <label class="form-check-label" for="bhk2-small">Small <br><small>Below 1200 sq
+                                                ft</small></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bhk_size" id="bhk2-large"
+                                            value="large">
+                                        <label class="form-check-label" for="bhk2-large">Large <br><small>Above 1200 sq
+                                                ft</small></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3 BHK -->
+                        <div class="bhk-option-item">
+                            <input type="radio" id="bhk3" name="bhk_type" value="3bhk" class="form-check-input"
+                                data-bs-toggle="collapse" data-bs-target="#bhk3-details" checked>
+                            <label for="bhk3" class="bhk-label d-flex justify-content-between align-items-center">3 BHK
+                                <i class="bi bi-chevron-up"></i></label>
+                            <div class="collapse show" id="bhk3-details" data-bs-parent=".bhk-options">
+                                <div class="bhk-sub-options">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bhk_size" id="bhk3-small"
+                                            value="small" checked>
+                                        <label class="form-check-label" for="bhk3-small">Small <br><small>Below 1200 sq
+                                                ft</small></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bhk_size" id="bhk3-large"
+                                            value="large">
+                                        <label class="form-check-label" for="bhk3-large">Large <br><small>Above 1200 sq
+                                                ft</small></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other BHK options... (same as before) -->
+                        <div class="bhk-option-item">
+                            <input type="radio" id="bhk4" name="bhk_type" value="4bhk" class="form-check-input"
+                                data-bs-toggle="collapse" data-bs-target="#bhk4-details">
+                            <label for="bhk4" class="bhk-label d-flex justify-content-between align-items-center">4 BHK
+                                <i class="bi bi-chevron-down"></i></label>
+                            <div class="collapse" id="bhk4-details" data-bs-parent=".bhk-options">
+                                <div class="bhk-sub-options">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bhk_size" id="bhk4-small"
+                                            value="small">
+                                        <label class="form-check-label" for="bhk4-small">Small <br><small>Below 1200 sq
+                                                ft</small></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="bhk_size" id="bhk4-large"
+                                            value="large">
+                                        <label class="form-check-label" for="bhk4-large">Large <br><small>Above 1200 sq
+                                                ft</small></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bhk-option-item">
+                            <input type="radio" id="bhk5" name="bhk_type" value="5bhk+" class="form-check-input">
+                            <label for="bhk5" class="bhk-label">5 BHK+</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2, 3, 4 are the same as before -->
+                <!-- Step 2: Rooms to Design -->
+                <div class="step d-none" id="step-2">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold">Select the rooms you'd like us to design</h4>
+                        <p class="text-muted">To know more about this, <a href="#" class="link-danger">click here</a>
+                        </p>
+                    </div>
+                    <div class="room-selection">
+                        <div class="room-item"><span>Living Room</span>
+                            <div class="quantity-selector"><button type="button"
+                                    class="btn btn-quantity minus">-</button><span
+                                    class="quantity-count">1</span><button type="button"
+                                    class="btn btn-quantity plus">+</button></div>
+                        </div>
+                        <div class="room-item"><span>Kitchen</span>
+                            <div class="quantity-selector"><button type="button"
+                                    class="btn btn-quantity minus">-</button><span
+                                    class="quantity-count">1</span><button type="button"
+                                    class="btn btn-quantity plus">+</button></div>
+                        </div>
+                        <div class="room-item"><span>Bedroom</span>
+                            <div class="quantity-selector"><button type="button"
+                                    class="btn btn-quantity minus">-</button><span
+                                    class="quantity-count">3</span><button type="button"
+                                    class="btn btn-quantity plus">+</button></div>
+                        </div>
+                        <div class="room-item"><span>Bathroom</span>
+                            <div class="quantity-selector"><button type="button"
+                                    class="btn btn-quantity minus">-</button><span
+                                    class="quantity-count">3</span><button type="button"
+                                    class="btn btn-quantity plus">+</button></div>
+                        </div>
+                        <div class="room-item"><span>Dining</span>
+                            <div class="quantity-selector"><button type="button"
+                                    class="btn btn-quantity minus">-</button><span
+                                    class="quantity-count">1</span><button type="button"
+                                    class="btn btn-quantity plus">+</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Pick your package -->
+                <div class="step d-none" id="step-3">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold">Pick your package</h4>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <input type="radio" class="btn-check" name="package" id="package-essentials"
+                                autocomplete="off">
+                            <label class="btn btn-outline-package w-100" for="package-essentials">
+                                <div class="d-md-flex align-items-center">
+                                    <div class="flex-shrink-0 mb-3 mb-md-0 me-md-4"><img
+                                            src="https://images.livspace-cdn.com/plain/https://d3gq2mer2po3no.cloudfront.net/resource/package/LS-Package-Images/Mobile/essentials-m-v2.jpg"
+                                            class="img-fluid rounded" alt="Essentials Package"></div>
+                                    <div class="flex-grow-1 text-start">
+                                        <h5 class="fw-bold">Essentials (₹)</h5>
+                                        <p class="mb-2">A range of essential home interior solutions that's perfect for
+                                            all your needs.</p>
+                                        <ul class="list-unstyled package-features">
+                                            <li><i class="bi bi-check-lg"></i> Affordable pricing</li>
+                                            <li><i class="bi bi-check-lg"></i> Convenient designs</li>
+                                            <li><i class="bi bi-check-lg"></i> Basic accessories</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="radio" class="btn-check" name="package" id="package-premium" autocomplete="off"
+                                checked>
+                            <label class="btn btn-outline-package w-100" for="package-premium">
+                                <div class="d-md-flex align-items-center">
+                                    <div class="flex-shrink-0 mb-3 mb-md-0 me-md-4"><img
+                                            src="https://images.livspace-cdn.com/plain/https://d3gq2mer2po3no.cloudfront.net/resource/package/LS-Package-Images/Mobile/premium-m-v2.jpg"
+                                            class="img-fluid rounded" alt="Premium Package"></div>
+                                    <div class="flex-grow-1 text-start">
+                                        <h5 class="fw-bold">Premium (₹₹)</h5>
+                                        <p class="mb-2">Superior home interior solutions that will take your interiors
+                                            to the next level.</p>
+                                        <ul class="list-unstyled package-features">
+                                            <li><i class="bi bi-check-lg"></i> Mid-range pricing</li>
+                                            <li><i class="bi bi-check-lg"></i> Premium materials</li>
+                                            <li><i class="bi bi-check-lg"></i> Enhanced durability</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="radio" class="btn-check" name="package" id="package-luxury" autocomplete="off">
+                            <label class="btn btn-outline-package w-100" for="package-luxury">
+                                <div class="d-md-flex align-items-center">
+                                    <div class="flex-shrink-0 mb-3 mb-md-0 me-md-4"><img
+                                            src="https://images.livspace-cdn.com/plain/https://d3gq2mer2po3no.cloudfront.net/resource/package/LS-Package-Images/Mobile/luxe-m-v2.jpg"
+                                            class="img-fluid rounded" alt="Luxury Package"></div>
+                                    <div class="flex-grow-1 text-start">
+                                        <h5 class="fw-bold">Luxury (₹₹₹)</h5>
+                                        <p class="mb-2">Get the ultimate interior experience with our high-end, bespoke
+                                            design solutions.</p>
+                                        <ul class="list-unstyled package-features">
+                                            <li><i class="bi bi-check-lg"></i> High-end pricing</li>
+                                            <li><i class="bi bi-check-lg"></i> Bespoke designs</li>
+                                            <li><i class="bi bi-check-lg"></i> Top-of-the-line materials</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Get Quote -->
+
+
+                <div class="step d-none" id="step-4">
+                    <div class="text-center mb-4">
+                        <h4 class="fw-bold">Your estimate is almost ready</h4>
+                    </div>
+                    <div class="row justify-content-center">
+                        
+                        <div class="col-md-8 col-lg-6">
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-lg" id="name" placeholder="Name"
+                                    name="user_name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control form-control-lg" id="email"
+                                    placeholder="Email ID" name="user_email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control form-control-lg" id="phone"
+                                    placeholder="Phone number" name="phone_number" required>
+                            </div>
+                            <div class="form-check text-start mb-4">
+                                <input class="form-check-input" type="checkbox" value="" id="whatsapp-check" checked>
+                                <label class="form-check-label small" for="whatsapp-check">Send me updates on
+                                    WhatsApp</label>
+                            </div>
+                            <p class="small text-muted text-center">By submitting this form, you agree to the <a
+                                    href="#" class="link-secondary">privacy policy</a> & <a href="#"
+                                    class="link-secondary">terms and
+                                    conditions</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Navigation -->
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <button class="btn btn-back" id="prevBtn" type="button">BACK</button>
+            <button class="btn btn-next" id="nextBtn" type="button">NEXT</button>
+        </div>
+
+    </div>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/calculator.js"></script>
+
+ 
+
+</body>
+
+</html>

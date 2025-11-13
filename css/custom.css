@@ -1059,59 +1059,121 @@
 
 
 
-/* Custom Styles for the Estimator Section */
-.estimator-section .card {
-    border-radius: 1rem;
-    /* Softer, rounded corners */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    /* Hide the overflowing background icon */
+
+/* #### SECTION PRICE CALCULATOR  */
+
+/* ---- Scoped Styles for Estimator V2 ---- */
+
+.estimator-section-v2 {
+    font-family: 'Lato', sans-serif;
+    background-color: #f8f9fa;
+    overflow: hidden; /* Prevents any unwanted horizontal scroll on the main page */
 }
 
-.estimator-section .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+.estimator-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #4f435f;
 }
 
-.icon-wrapper {
-    position: relative;
-    height: 90px;
+.estimator-section-subtitle {
+    color: #6c757d;
+    font-weight: 400;
+}
+
+/* --- Horizontal Scroll --- */
+.estimator-scroll-container {
+    overflow-x: auto;
+    /* Hide the scrollbar for a cleaner UI */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+.estimator-scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.estimator-scroll-content {
     display: flex;
+    flex-wrap: nowrap;
+    /* Use gap for reliable spacing between cards */
+    gap: 1.25rem; 
+    /* Padding on left/right ensures cards don't touch the screen edges */
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* --- Card Design (Smaller) --- */
+.estimator-card {
+    /* flex-shrink: 0 is essential to prevent cards from squishing */
+    flex-shrink: 0; 
+    width: 260px; /* A smaller, fixed width */
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.estimator-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.estimator-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* --- Icons (Separated) --- */
+.estimator-icon-wrapper {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
     margin-bottom: 1rem;
+    height: 60px;
 }
 
-.main-icon {
-    font-size: 3.5rem;
-    /* Main icon size */
+.estimator-start-icon {
+    font-size: 2.75rem;
     color: #d1d1d1;
-    position: relative;
-    z-index: 2;
 }
 
-.bg-icon {
-    position: absolute;
-    font-size: 5rem;
-    /* Background icon size */
-    color: #f7f7f7;
-    opacity: 0.9;
-    right: 15%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
+.estimator-end-icon {
+    font-size: 2.25rem;
+    color: #f1f3f5;
 }
 
-.btn-calculate {
+/* --- Text & Button --- */
+.estimator-card-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.estimator-card-subtext {
+    color: #495057; /* Bolder color */
+    font-weight: 400; /* Bolder weight */
+    font-size: 0.875rem;
+    /* Pushes the button to the bottom */
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.estimator-btn {
     background-color: #e5595a;
     color: white;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 0.8rem;
     letter-spacing: 0.5px;
     padding: 0.6rem 1.5rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
+    /* align-self ensures button doesn't stretch if card-body is a flex container */
+    align-self: center;
 }
 
-.btn-calculate:hover {
+.estimator-btn:hover {
     background-color: #d14849;
     color: white;
 }

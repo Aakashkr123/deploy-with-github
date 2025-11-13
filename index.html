@@ -21,6 +21,12 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- Google Fonts: Poppins for headings, Lato for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
 
     <title>Pranna Interio</title>
 </head>
@@ -120,7 +126,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="subfolder/blog.html">Blog</a></li>
                     </ul>
                 </div>
             </div>
@@ -625,72 +631,67 @@
     <!-- End of Stats Banner Section -->
 
 
-    <!-- section : price calculator -->
-    <section class="estimator-section py-5">
+
+    <!-- calculator section  -->
+    <section class="estimator-section-v2 py-5">
         <div class="container">
             <!-- Section Header -->
-            <div class="text-center mb-5">
-                <h2 class="fw-bold" style="color: #4f435f;">Interior Price Estimator</h2>
-                <p class="text-muted">Calculate the approximate cost of doing up your interiors</p>
+            <div class="text-center mb-4">
+                <h2 class="estimator-section-title">Interior Price Estimator</h2>
+                <p class="estimator-section-subtitle">Calculate the approximate cost of doing up your interiors</p>
             </div>
 
-            <!-- Estimator Cards -->
-            <div class="row justify-content-center g-4">
 
-                <!-- Card 1: Full Home -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center d-flex flex-column p-4 p-xl-5">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-house-heart main-icon"></i>
-                                <i class="bi bi-calculator-fill bg-icon"></i>
+            <!-- Horizontally Scrolling Container -->
+            <div class="estimator-scroll-container">
+                <div class="estimator-scroll-content">
+
+                    <!-- Card 1: Full Home -->
+                    <div class="estimator-card">
+                        <div class="estimator-card-body">
+                            <div class="estimator-icon-wrapper">
+                                <i class="bi bi-house-heart estimator-start-icon"></i>
+                                <i class="bi bi-calculator-fill estimator-end-icon"></i>
                             </div>
-                            <h5 class="card-title fw-bold">Full Home</h5>
-                            <p class="card-text text-muted small mb-4">Get an approximate costing for your full home
-                                interiors.</p>
-                            <a href="#" class="btn btn-calculate rounded-pill mt-auto">CALCULATE &gt;</a>
+                            <h5 class="estimator-card-title">Full Home</h5>
+                            <p class="estimator-card-subtext">Approximate costing for your full home interiors.</p>
+                            <a href="subfolder/calculator.html" class="estimator-btn rounded-pill">CALCULATE &gt;</a>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 2: Kitchen -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center d-flex flex-column p-4 p-xl-5">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-fire main-icon"></i>
-                                <i class="bi bi-calculator-fill bg-icon"></i>
+                    <!-- Card 2: Kitchen -->
+                    <div class="estimator-card">
+                        <div class="estimator-card-body">
+                            <div class="estimator-icon-wrapper">
+                                <i class="bi bi-fire estimator-start-icon"></i>
+                                <i class="bi bi-calculator-fill estimator-end-icon"></i>
                             </div>
-                            <h5 class="card-title fw-bold">Kitchen</h5>
-                            <p class="card-text text-muted small mb-4">Get an approximate costing for your kitchen
-                                interior.</p>
-                            <a href="#" class="btn btn-calculate rounded-pill mt-auto">CALCULATE &gt;</a>
+                            <h5 class="estimator-card-title">Kitchen</h5>
+                            <p class="estimator-card-subtext">Approximate costing for your kitchen interior.</p>
+                            <a href="#" class="estimator-btn rounded-pill">CALCULATE &gt;</a>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 3: Wardrobe -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center d-flex flex-column p-4 p-xl-5">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-door-closed main-icon"></i>
-                                <i class="bi bi-calculator-fill bg-icon"></i>
+                    <!-- Card 3: Wardrobe -->
+                    <div class="estimator-card">
+                        <div class="estimator-card-body">
+                            <div class="estimator-icon-wrapper">
+                                <i class="bi bi-door-closed estimator-start-icon"></i>
+                                <i class="bi bi-calculator-fill estimator-end-icon"></i>
                             </div>
-                            <h5 class="card-title fw-bold">Wardrobe</h5>
-                            <p class="card-text text-muted small mb-4">Get an approximate costing for your wardrobe.</p>
-                            <a href="#" class="btn btn-calculate rounded-pill mt-auto">CALCULATE &gt;</a>
+                            <h5 class="estimator-card-title">Wardrobe</h5>
+                            <p class="estimator-card-subtext">Approximate costing for your wardrobe.</p>
+                            <a href="#" class="estimator-btn rounded-pill">CALCULATE &gt;</a>
                         </div>
                     </div>
-                </div>
 
+
+
+                </div>
             </div>
         </div>
     </section>
-    <!-- END -->
-
-
-
+    <!-- End -->
 
 
 
@@ -1056,8 +1057,8 @@
     <!-- END -->
 
     <!-- Optional: WhatsApp Floating Button -->
-    <a href="https://wa.me/919243122221" target="_blank" class="whatsapp-fab shadow-lg">
-        <i class="fab fa-whatsapp me-2"></i> Get in touch
+    <a href="https://wa.me/916205833044" target="_blank" class="whatsapp-fab shadow-lg">
+        <i class="fab fa-whatsapp me-2"></i> Contact Us
     </a>
     <!-- END -->
 
