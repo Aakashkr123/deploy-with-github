@@ -1051,10 +1051,21 @@
 }
 
 
-.stats-banner {
-    background-color: #589d81 !important;
+#stats-counter-section {
+    /* 1. Add background image with a dark overlay for text readability */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* This is the transparent overlay */
+        url('../assets/works/living-room-2569325_1280.jpg') no-repeat center center;
+    
+    /* 2. Make the background image cover the entire section */
+    background-size: cover;
+    
+    /* 3. This is the key property for the parallax (fixed scroll) effect */
+    background-attachment: fixed;
+    
+    /* Optional: Ensure content has some space from the overlay */
+    position: relative; 
 }
-
 
 
 

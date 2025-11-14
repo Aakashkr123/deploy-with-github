@@ -15,41 +15,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/calculator.css">
+    <link rel="stylesheet" href="../css/custom.css">
+    <!-- ... other head tags ... -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
 
     <!-- New Header Section -->
     <header class="header-top">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="logo-area">
-                <h4 class="mb-0"> <a href="../index.html" class="text-decoration-none text-secondary-emphasis">Pranna Interio </a></h4>
-            </div>
+        <div class="container-fluid">
+            <div class="row justify-content-evenly align-items-center ">
+                <div class="col-10">
+                    <div class="logo-area">
+                        <!-- Your Logo SVG -->
+                        <div style="width: 100px; color: rgb(0, 0, 0);" class="mb-0 mt-0">
+                            <a href="../index.html" class="text-decoration-none text-black">
+                                <svg width="224" height="112" viewBox="0 0 300 150" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="currentColor">
+                                        <!-- The Frame -->
+                                        <path d="M50 30 H 250 V 120 H 50 V 30 Z M 52 32 V 118 H 248 V 32 H 52 Z" />
 
-            <!-- Stepper is now in the header -->
-            <div class="stepper-area">
-                <div class="stepper-wrapper">
-                    <div class="stepper-item">
-                        <div class="step-counter"></div>
-                        <div class="step-name">BHK Type</div>
+                                        <!-- Wordmark "Pranna" in a bold script style -->
+                                        <text x="150" y="80"
+                                            font-family="'Brush Script MT', 'Brush Script Std', 'cursive'"
+                                            font-size="50" font-weight="700" text-anchor="middle"
+                                            dominant-baseline="middle">Pranna</text>
+
+                                        <!-- Supporting text "INTERIOR" -->
+                                        <text x="150" y="110" font-family="'Montserrat', 'sans-serif'" font-size="12"
+                                            font-weight="500" text-anchor="middle" letter-spacing="0.2em">INTERIO</text>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="stepper-item">
-                        <div class="step-counter"></div>
-                        <div class="step-name">Rooms</div>
+                </div>
+                <div class="col-2">
+                    <div class="step-count-area">
+                        <span id="step-counter-display" class="fw-lighter">1/4</span>
                     </div>
-                    <div class="stepper-item">
-                        <div class="step-counter"></div>
-                        <div class="step-name">Package</div>
-                    </div>
-                    <div class="stepper-item">
-                        <div class="step-counter"></div>
-                        <div class="step-name">Quote</div>
-                    </div>
+
                 </div>
             </div>
 
-            <div class="step-count-area">
-                <span id="step-counter-display" class="fw-bold">1/4</span>
+            <!-- status bar -->
+            <div class="row py-4">
+                <div class="col">
+                    <!-- Stepper is now in the header -->
+                    <div class="stepper-area">
+                        <div class="stepper-wrapper">
+                            <div class="stepper-item">
+                                <div class="step-counter"></div>
+                                <div class="step-name">BHK Type</div>
+                            </div>
+                            <div class="stepper-item">
+                                <div class="step-counter"></div>
+                                <div class="step-name">Rooms</div>
+                            </div>
+                            <div class="stepper-item">
+                                <div class="step-counter"></div>
+                                <div class="step-name">Package</div>
+                            </div>
+                            <div class="stepper-item">
+                                <div class="step-counter"></div>
+                                <div class="step-name">Quote</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -161,17 +196,20 @@
                         </p>
                     </div>
                     <div class="room-selection">
-                        <div class="room-item"><span>Living Room</span>
-                            <div class="quantity-selector"><button type="button"
-                                    class="btn btn-quantity minus">-</button><span
-                                    class="quantity-count">1</span><button type="button"
-                                    class="btn btn-quantity plus">+</button></div>
+                        <div class="room-item">
+                            <span>Living Room</span>
+                            <div class="quantity-selector">
+                                <button type="button" class="btn btn-quantity minus">-</button>
+                                <span class="quantity-count"> 1</span>
+                                <button type="button" class="btn btn-quantity plus">+</button>
+                            </div>
                         </div>
                         <div class="room-item"><span>Kitchen</span>
-                            <div class="quantity-selector"><button type="button"
-                                    class="btn btn-quantity minus">-</button><span
-                                    class="quantity-count">1</span><button type="button"
-                                    class="btn btn-quantity plus">+</button></div>
+                            <div class="quantity-selector">
+                                <button type="button" class="btn btn-quantity minus">-</button>
+                                <span class="quantity-count">1</span>
+                                <button type="button" class="btn btn-quantity plus">+</button>
+                            </div>
                         </div>
                         <div class="room-item"><span>Bedroom</span>
                             <div class="quantity-selector"><button type="button"
@@ -202,14 +240,16 @@
                     <div class="row g-3">
                         <div class="col-md-12">
                             <input type="radio" class="btn-check" name="package" id="package-essentials"
-                                autocomplete="off">
+                                autocomplete="off" value="Normal starting with 3.5Lakhs">
                             <label class="btn btn-outline-package w-100" for="package-essentials">
                                 <div class="d-md-flex align-items-center">
-                                    <div class="flex-shrink-0 mb-3 mb-md-0 me-md-4"><img
-                                            src="https://images.livspace-cdn.com/plain/https://d3gq2mer2po3no.cloudfront.net/resource/package/LS-Package-Images/Mobile/essentials-m-v2.jpg"
-                                            class="img-fluid rounded" alt="Essentials Package"></div>
+                                    <div class="flex-shrink-0 mb-3 mb-md-0 me-md-4">
+                                        <img src="../assets/works/home-1622401_1280.jpg" class="img-fluid"
+                                            alt="Essentials Package">
+                                    </div>
                                     <div class="flex-grow-1 text-start">
                                         <h5 class="fw-bold">Essentials (₹)</h5>
+                                        <h5 class="play-fair-design "><u>Starting with : 3.5 Lakh</u></h5>
                                         <p class="mb-2">A range of essential home interior solutions that's perfect for
                                             all your needs.</p>
                                         <ul class="list-unstyled package-features">
@@ -223,14 +263,15 @@
                         </div>
                         <div class="col-md-12">
                             <input type="radio" class="btn-check" name="package" id="package-premium" autocomplete="off"
-                                checked>
+                                checked value="Premium starting with 5Lakhs">
                             <label class="btn btn-outline-package w-100" for="package-premium">
                                 <div class="d-md-flex align-items-center">
                                     <div class="flex-shrink-0 mb-3 mb-md-0 me-md-4"><img
-                                            src="https://images.livspace-cdn.com/plain/https://d3gq2mer2po3no.cloudfront.net/resource/package/LS-Package-Images/Mobile/premium-m-v2.jpg"
-                                            class="img-fluid rounded" alt="Premium Package"></div>
+                                            src="../assets/works/living-room-2569325_1280.jpg" class="img-fluid rounded"
+                                            alt="Premium Package"></div>
                                     <div class="flex-grow-1 text-start">
                                         <h5 class="fw-bold">Premium (₹₹)</h5>
+                                        <h5 class="play-fair-design "><u>Starting with : 5 Lakh</u></h5>
                                         <p class="mb-2">Superior home interior solutions that will take your interiors
                                             to the next level.</p>
                                         <ul class="list-unstyled package-features">
@@ -243,14 +284,16 @@
                             </label>
                         </div>
                         <div class="col-md-12">
-                            <input type="radio" class="btn-check" name="package" id="package-luxury" autocomplete="off">
+                            <input type="radio" class="btn-check" name="package" id="package-luxury" autocomplete="off"
+                                value="Luxury starting with 7Lakhs">
                             <label class="btn btn-outline-package w-100" for="package-luxury">
                                 <div class="d-md-flex align-items-center">
                                     <div class="flex-shrink-0 mb-3 mb-md-0 me-md-4"><img
-                                            src="https://images.livspace-cdn.com/plain/https://d3gq2mer2po3no.cloudfront.net/resource/package/LS-Package-Images/Mobile/luxe-m-v2.jpg"
-                                            class="img-fluid rounded" alt="Luxury Package"></div>
+                                            src="../assets/renovated/home5.jpeg" class="img-fluid rounded"
+                                            alt="Luxury Package"></div>
                                     <div class="flex-grow-1 text-start">
                                         <h5 class="fw-bold">Luxury (₹₹₹)</h5>
+                                        <h5 class="play-fair-design "><u>Starting with : 7 Lakh</u></h5>
                                         <p class="mb-2">Get the ultimate interior experience with our high-end, bespoke
                                             design solutions.</p>
                                         <ul class="list-unstyled package-features">
@@ -273,7 +316,7 @@
                         <h4 class="fw-bold">Your estimate is almost ready</h4>
                     </div>
                     <div class="row justify-content-center">
-                        
+
                         <div class="col-md-8 col-lg-6">
                             <div class="mb-3">
                                 <input type="text" class="form-control form-control-lg" id="name" placeholder="Name"
@@ -312,12 +355,64 @@
     </div>
 
 
+
+    <script>
+
+
+        const form = document.getElementById('contact-form');
+        const scriptURL = 'https://formspree.io/f/mblqlzaw';
+
+
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const submitButton = form.querySelector('button');
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    console.log('Success!', response);
+                    // This one line shows a beautiful modal
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Success!',
+                        // Use the 'html' property to include a link
+                        html:
+                            'Your submission has been received! <br>' +
+                            'You can now <a href="../index.html">return to the homepage</a>.',
+                    });
+                    // Optional: reset the form and re-enable the button
+                    form.reset();
+                    submitButton.textContent = 'Submit';
+                    submitButton.disabled = false;
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        // Use the 'html' property to include a link
+                        html:
+                            'Your submission has been received! <br>' +
+                            'We will reach you soon !! <br>' +
+                            'You can now <a href="../index.html">return to the homepage</a>.',
+                    });
+
+                    form.reset();
+                    submitButton.textContent = 'Submit';
+                    submitButton.disabled = false;
+                    // window.location.replace('blog.html'); 
+                });
+        });
+    </script>
+
+
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="../js/calculator.js"></script>
 
- 
+
 
 </body>
 
